@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <file>logs/movielen.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+        <fileNamePattern>logs/movielen.%d{yyyy-MM-dd}.log.tar.gz</fileNamePattern>
+        <maxHistory>7</maxHistory>
+    </rollingPolicy>  
+    <encoder>
+      <pattern>%d [%thread] %-5level %logger{35} - %msg %-4relative%n</pattern>
+    </encoder>
+    <append>true</append>
+  </appender>
+        
+  <root level="INFO">
+  <appender-ref ref="FILE" />
+  </root>
+</configuration>
